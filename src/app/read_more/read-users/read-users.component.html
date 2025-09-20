@@ -1,0 +1,15 @@
+<div class=" container mt-4">
+  <h2 class="mb-3" class="text-info">Read More About User</h2>
+  <div class="card bg-light" style="width: 18rem;" *ngIf="user" >
+  <div class="card-body " >
+    <h6 class="card-subtitle mb-2 text-muted">user name {{user.name}}</h6>
+   <p class="card-text">user title {{user.title}}</p>
+   <p class="card-text">user body {{user.body}}</p>
+     <button class= "btn btn-primary" (click)="back()">Back to List</button>
+      </div>
+  </div>
+</div>
+
+
+
+  

@@ -1,0 +1,42 @@
+
+<form  ms-auto (ngSubmit)="adduser()">
+    <div class="m-3">
+    <label for="exampleInputPassword1" class="form-label">User Name</label>
+    <input type="text" class="form-control" id="exampleInputPassword1" [(ngModel)]="newUser.name" name="name">
+  </div>
+  <div class="m-3">
+    <label for="exampleInputEmail1" class="form-label">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" [(ngModel)]="newUser.email" name="email">
+  </div>
+ <div class="m-3">
+    <label for="exampleInputPassword1" class="form-label">User Title</label>
+    <input type="text" class="form-control" id="exampleInputPassword1"  [(ngModel)]="newUser.title" name="tilte">
+  </div>
+ <div class="m-3">
+    <label for="exampleInputPassword1" class="form-label">User body</label>
+    <input type="text" class="form-control" id="exampleInputPassword1" [(ngModel)]="newUser.body" name="body">
+  </div>
+ 
+  <button type="submit" class="btn btn-primary m-3" >Add User</button>
+</form>
+<div class=" container mt-4">
+  <h2 class="mb-3">Add New Post</h2>
+  <div class="row d-flex  justify-content-around " >
+<div class="col-3"  *ngFor="let user of users">
+  <div class="card" style="width: 18rem;"  >
+  <div class="card-body" >
+    <h5 class="card-title">user id {{user.id}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">user name {{user.name}}</h6>
+    <p class="card-text">{{user.email}}</p>
+   <p class="card-text"> user title {{user.title}}</p>
+   <p class="card-text"> user body {{user.body}}</p>
+     <button class="btn btn-danger btn-sm" (click)="deleteuser(user.id)">Delete</button>
+      <button class="btn btn-warning btn-sm" (click)="edituser(user.id)">Edit</button>
+      <button class="btn btn-info btn-sm" (click)="readmore(user.id)">Read More</button>
+      </div>
+  </div>
+</div>
+</div>
+
+
+  
